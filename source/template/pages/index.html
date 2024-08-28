@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    @@include('../layouts/head.html')
+  </head>
 
-<head>
-    @@include('../layouts/meta.html')
-</head>
-
-<body>
+  <body>
     @@include('../layouts/header.html')
+
     <main>
-        <article>
-            <section class="home">
-                <p>Buralar eskiden dutluktu..</p>
-            </section>
-        </article>
+      <article>
+        <section>
+          <p>Index</p>
+          <div class="section">Section 1</div>
+          <div class="section">Section 2</div>
+          <div class="section" data-section="3">Section 3</div>
+        </section>
+      </article>
     </main>
 
-    @@include('../layouts/footer.html')
-    @@include('../layouts/script.html')
-</body>
-
+    @@include('../layouts/footer.html') @@include('../layouts/script.html')
+  </body>
 </html>

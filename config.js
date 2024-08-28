@@ -1,99 +1,84 @@
 const port = 1111;
-const app = "app";
-const source = "source";
+const app = 'app';
+const source = 'source';
 
-let data = {
-    prod: process.argv[2] === "p",
-    app: app,
-    source: source,
-    port: port,
-    libJs: {
-        target: {
-            name: "lib.min.js",
-            path: `${app}/assets/js`
-        },
-        source: {
-            paths: [
-                
-            ]
-        }
+let config = {
+  prod: process.argv[2] === 'p',
+  app: app,
+  source: source,
+  port: port,
+  cache: {
+    path: `${source}/cache`,
+  },
+  template: {
+    target: {
+      path: app,
     },
-    libCss: {
-        target: {
-            name: "lib.min.css",
-            path: `${app}/assets/css`
-        },
-        source: {
-            paths: [
-                
-            ]
-        }
+    source: {
+      paths: [`${source}/template/pages/**/*.html`],
+      watch: [`${source}/template/**/*`],
     },
-    js: {
-        target: {
-            name: "all.min.js",
-            path: `${app}/assets/js`
-        },
-        source: {
-            paths: [
-                `${source}/js/**/*`
-            ]
-        }
+  },
+  scss: {
+    target: {
+      name: 'all.min.css',
+      path: `${app}/assets/css`,
     },
-    scss: {
-        target: {
-            name: "all.min.css",
-            path: `${app}/assets/css`
-        },
-        source: {
-            paths: [
-                `${source}/scss/**/*.scss`
-            ]
-        }
+    source: {
+      paths: [`${source}/scss/**/*.scss`],
     },
-    image: {
-        target: {
-            path: `${app}/assets/image`
-        },
-        source: {
-            paths: [
-                `${source}/image/**/*.{tif,tiff,bmp,jpg,jpeg,gif,png,eps,webp,svg}`
-            ]
-        }
+  },
+  libCss: {
+    target: {
+      name: 'lib.min.css',
+      path: `${app}/assets/css`,
     },
-    video: {
-        target: {
-            path: `${app}/assets/video`
-        },
-        source: {
-            paths: [
-                `${source}/video/**/*.{mp4,webm,mkv,flv,ogv,ogg,gif,avi,mov,wmv,mpeg,mpg,mp2,m4v,svi,3gp,3g2}`
-            ]
-        }
+    source: {
+      paths: [`${source}/lib/css/**/*.css`],
     },
-    font: {
-        target: {
-            path: `${app}/assets/fonts`
-        },
-        source: {
-            paths: [
-                `${source}/fonts/**/*.{eot,svg,ttf,woff,woff2}`
-            ]
-        }
+  },
+  js: {
+    target: {
+      name: 'all.min.js',
+      path: `${app}/assets/js`,
     },
-    template: {
-        target: {
-            path: `${app}`
-        },
-        source: {
-            paths: [
-                `${source}/template/pages/**/*.html`
-            ],
-            watch: [
-                `${source}/template/**/*`
-            ]
-        }
-    }
+    source: {
+      paths: [`${source}/js/**/*.js`],
+    },
+  },
+  libJs: {
+    target: {
+      name: 'lib.min.js',
+      path: `${app}/assets/js`,
+    },
+    source: {
+      paths: [`${source}/lib/js/**/*.js`],
+    },
+  },
+  font: {
+    target: {
+      path: `${app}/assets/fonts`,
+    },
+    source: {
+      paths: [`${source}/fonts/**/*.{eot,svg,ttf,woff,woff2}`],
+    },
+  },
+  video: {
+    target: {
+      path: `${app}/assets/videos`,
+    },
+    source: {
+      paths: [`${source}/videos/**/*.{mp4,webm,mkv,flv,ogv,ogg,gif,avi,mov,wmv,mpeg,mpg,mp2,m4v,svi,3gp,3g2}`],
+    },
+  },
+  image: {
+    target: {
+      path: `${app}/assets/images`,
+    },
+    source: {
+      paths: [`${source}/images/**/*.{tif,tiff,bmp,jpg,jpeg,gif,png,eps,webp,svg}`],
+    },
+  },
 };
 
-export default data;
+export default config;
