@@ -14,9 +14,12 @@ import { release, releaseFull } from "./tasks/release.js";
 import { template } from "./tasks/template.js";
 import { video } from "./tasks/video.js";
 
-const reload = () => browserSync.reload();
+const reload = (done) => {
+  browserSync.reload();
+  done();
+};
 
-const watch = () => {
+const watch = (done) => {
   gulp.watch(config.js.source.paths, { delay: 500 }, gulp.series(javascript, reload));
   gulp.watch(config.libJs.source.paths, { delay: 500 }, gulp.series(javascript, reload));
   gulp.watch(config.scss.source.paths, { delay: 500 }, gulp.series(css, reload));
