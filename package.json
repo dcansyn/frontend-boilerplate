@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "gulp development",
     "build": "gulp build",
-    "release": "gulp p && gulp compress && gulp release",
-    "release-full": "gulp p && gulp compress && gulp release-full"
+    "release": "gulp build && gulp compress && gulp release",
+    "release-full": "gulp build && gulp compress && gulp release-full"
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",

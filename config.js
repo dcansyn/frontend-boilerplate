@@ -1,7 +1,7 @@
 const port = 3000;
 const app = "app";
 const source = "source";
-const release = null;
+const release = "../release";
 
 let config = {
   build: process.argv[2] === "build",
