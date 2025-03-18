@@ -19,7 +19,7 @@ const reload = (done) => {
   done();
 };
 
-const watch = (done) => {
+const watch = () => {
   gulp.watch(config.js.source.paths, { delay: 500 }, gulp.series(javascript, reload));
   gulp.watch(config.libJs.source.paths, { delay: 500 }, gulp.series(javascript, reload));
   gulp.watch(config.scss.source.paths, { delay: 500 }, gulp.series(css, reload));
