@@ -1,13 +1,12 @@
-import fs from "fs";
+import { globbySync } from "globby";
 import gulp from "gulp";
 import config from "../config.js";
 
 const releaseFile = (sourcePath, destinationPath) => {
-  if (!fs.existsSync(sourcePath)) {
-    return gulp.src(".");
-  }
+  let files = globbySync(sourcePath);
+  if (files.length === 0) return gulp.src(".");
 
-  return gulp.src(sourcePath, { encoding: false }).pipe(gulp.dest(destinationPath));
+  return gulp.src(sourcePath, { encoding: false, allowEmpty: true }).pipe(gulp.dest(destinationPath));
 };
 
 const releaseCss = () => releaseFile(config.release.css.source.paths, config.release.css.destination.path);

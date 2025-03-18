@@ -1,4 +1,5 @@
 import autoprefixer from "autoprefixer";
+import { globbySync } from "globby";
 import gulp from "gulp";
 import cleanCss from "gulp-clean-css";
 import concat from "gulp-concat";
@@ -12,6 +13,9 @@ import config from "../config.js";
 const sass = gulpSass(defaultSass);
 
 const scss = () => {
+  let files = globbySync(config.scss.source.paths);
+  if (files.length === 0) return gulp.src(".");
+
   let result = gulp.src(config.scss.source.paths).pipe(encode({ from: "windows1250", to: "utf8" }));
 
   if (config.build) {
@@ -44,9 +48,8 @@ const scss = () => {
 };
 
 const cssLibrary = () => {
-  if (config.libCss.source.paths.length <= 0) {
-    return gulp.src(".");
-  }
+  let files = globbySync(config.libCss.source.paths);
+  if (files.length === 0) return gulp.src(".");
 
   let result = gulp.src(config.libCss.source.paths).pipe(encode({ from: "windows1250", to: "utf8" }));
   if (config.build) {

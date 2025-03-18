@@ -1,16 +1,15 @@
-import fs from "fs";
+import { globbySync } from "globby";
 import gulp from "gulp";
 import brotli from "gulp-brotli";
 import gzip from "gulp-gzip";
 import config from "../config.js";
 
 const compressFile = (sourcePath, destinationPath) => {
-  if (!fs.existsSync(sourcePath)) {
-    return gulp.src(".");
-  }
+  let files = globbySync(sourcePath);
+  if (files.length === 0) return gulp.src(".");
 
   return gulp
-    .src(sourcePath, { encoding: false })
+    .src(sourcePath, { encoding: false, allowEmpty: true })
     .pipe(gzip())
     .pipe(gulp.dest(destinationPath))
     .pipe(brotli.compress({ quality: 11 }))
