@@ -1,9 +1,11 @@
+@use "../settings/variables" as variables;
+
 $screen-widths: (
-  'laptop': $width-xl,
-  'tablet': $width-lg,
-  'ipad': $width-md,
-  'phone': $width-sm,
-  'ip5': $width-xs,
+  "laptop": variables.$width-xl,
+  "tablet": variables.$width-lg,
+  "ipad": variables.$width-md,
+  "phone": variables.$width-sm,
+  "ip5": variables.$width-xs,
 );
 
 @mixin screen-width($width, $type: max) {

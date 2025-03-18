@@ -1,29 +1,35 @@
 {
-    "version": "1.0.0",
-    "name": "frontend-boilerplate",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "start": "gulp d",
-        "build": "gulp p"
-    },
-    "devDependencies": {
-        "autoprefixer": "^10.4.7",
-        "browser-sync": "^2.27.9",
-        "del": "^6.0.0",
-        "gulp": "^4.0.2",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-convert-encoding": "^2.1.0",
-        "gulp-csso": "^4.0.1",
-        "gulp-file-include": "^2.3.0",
-        "gulp-imagemin": "^8.0.0",
-        "gulp-postcss": "^9.0.1",
-        "gulp-sass": "^5.1.0",
-        "gulp-strip-comments": "^2.5.2",
-        "gulp-uglify": "^3.0.2",
-        "gulp-webp": "^4.0.1",
-        "gulp4-run-sequence": "^1.0.1",
-        "sass": "^1.51.0"
-    }
+  "name": "frontend-boilerplate",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "gulp development",
+    "build": "gulp build",
+    "release": "gulp p && gulp compress && gulp release",
+    "release-full": "gulp p && gulp compress && gulp release-full"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "browser-sync": "^3.0.3",
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "gulp-brotli": "^3.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-convert-encoding": "^4.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-format-html": "^3.2.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-strip-comments": "^2.6.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-webp": "^5.0.0",
+    "gulp4-run-sequence": "^1.0.2",
+    "postcss": "^8.5.3",
+    "sass": "^1.86.0"
+  }
 }

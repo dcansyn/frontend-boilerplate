@@ -1,9 +1,11 @@
+@use "../settings/mixins" as mixins;
+
 header {
   display: flex;
   align-items: center;
   justify-content: center;
   .logo {
-    @include border-radius();
+    @include mixins.border-radius();
     height: 100px;
   }
 }

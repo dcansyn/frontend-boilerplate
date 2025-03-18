@@ -1,21 +1,19 @@
-**Node** 14.15.0
+**Node** 20.15.0
 
-**Config** file:
+**Config**
 
-```shell
+```
 config.js
 ```
 
-**Development** mode:
+**Development**
 
-```shell
-$ npm start
+```
+yarn dev
 ```
 
-**Production** mode:
+**Production**
 
-```shell
-$ npm run build
 ```
-
-[![Can Sayan](https://cansayan.com.tr/assets/img/icon.ico)](https://cansayan.com.tr)
+yarn build
+```

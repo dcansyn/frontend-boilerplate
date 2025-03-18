@@ -1,12 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-import config from '../config.js';
+import fs from "fs";
+import path from "path";
+import config from "../config.js";
 
 export const getCache = (key) => {
   let cachePath = path.join(config.cache.path, `${key}.json`);
   if (!fs.existsSync(cachePath)) return null;
 
-  let data = fs.readFileSync(cachePath, 'utf8');
+  let data = fs.readFileSync(cachePath, "utf8");
   return JSON.parse(data);
 };
 

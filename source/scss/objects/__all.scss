@@ -1,1 +1,3 @@
-@import "./header", "./home", "./footer";
+@use "header" as header;
+@use "home" as home;
+@use "footer" as footer;

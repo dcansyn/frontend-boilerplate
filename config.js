@@ -1,9 +1,10 @@
-const port = 1111;
-const app = 'app';
-const source = 'source';
+const port = 3000;
+const app = "app";
+const source = "source";
+const release = null;
 
 let config = {
-  prod: process.argv[2] === 'p',
+  build: process.argv[2] === "build",
   app: app,
   source: source,
   port: port,
@@ -11,7 +12,7 @@ let config = {
     path: `${source}/cache`,
   },
   template: {
-    target: {
+    destination: {
       path: app,
     },
     source: {
@@ -20,8 +21,8 @@ let config = {
     },
   },
   scss: {
-    target: {
-      name: 'all.min.css',
+    destination: {
+      name: "all.min.css",
       path: `${app}/assets/css`,
     },
     source: {
@@ -29,8 +30,8 @@ let config = {
     },
   },
   libCss: {
-    target: {
-      name: 'lib.min.css',
+    destination: {
+      name: "lib.min.css",
       path: `${app}/assets/css`,
     },
     source: {
@@ -38,8 +39,8 @@ let config = {
     },
   },
   js: {
-    target: {
-      name: 'all.min.js',
+    destination: {
+      name: "all.min.js",
       path: `${app}/assets/js`,
     },
     source: {
@@ -47,8 +48,8 @@ let config = {
     },
   },
   libJs: {
-    target: {
-      name: 'lib.min.js',
+    destination: {
+      name: "lib.min.js",
       path: `${app}/assets/js`,
     },
     source: {
@@ -56,15 +57,15 @@ let config = {
     },
   },
   font: {
-    target: {
+    destination: {
       path: `${app}/assets/fonts`,
     },
     source: {
-      paths: [`${source}/fonts/**/*.{eot,svg,ttf,woff,woff2}`],
+      paths: [`${source}/fonts/**/*.{eot,svg,ttf,woff,woff2,otf}`],
     },
   },
   video: {
-    target: {
+    destination: {
       path: `${app}/assets/videos`,
     },
     source: {
@@ -72,11 +73,53 @@ let config = {
     },
   },
   image: {
-    target: {
+    destination: {
       path: `${app}/assets/images`,
     },
     source: {
-      paths: [`${source}/images/**/*.{tif,tiff,bmp,jpg,jpeg,gif,png,eps,webp,svg}`],
+      paths: [`${source}/images/**/*.{tif,tiff,bmp,jpg,jpeg,gif,png,eps,webp,svg,ico}`],
+    },
+  },
+  release: {
+    css: {
+      destination: {
+        path: `${release}/css`,
+      },
+      source: {
+        paths: [`${app}/assets/css/*.*`],
+      },
+    },
+    js: {
+      destination: {
+        path: `${release}/js`,
+      },
+      source: {
+        paths: [`${app}/assets/js/*.*`],
+      },
+    },
+    fonts: {
+      destination: {
+        path: `${release}/fonts`,
+      },
+      source: {
+        paths: [`${app}/assets/fonts/**/*.{eot,svg,ttf,woff,woff2,otf}`],
+      },
+    },
+    images: {
+      destination: {
+        path: `${release}/images`,
+      },
+      source: {
+        paths: [`${app}/assets/images/**/*.{tif,tiff,bmp,jpg,jpeg,gif,png,eps,webp,svg,ico}`],
+      },
+    },
+    videos: {
+      destination: {
+        path: `${release}/videos`,
+      },
+      source: {
+        paths: [`${app}/assets/videos/**/*.{mp4,webm,mkv,flv,ogv,ogg,gif,avi,mov,wmv,mpeg,mpg,mp2,m4v,svi,3gp,3g2}`],
+      },
     },
   },
 };
