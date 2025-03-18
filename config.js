@@ -17,7 +17,7 @@ let config = {
     },
     source: {
       paths: [`${source}/template/pages/**/*.html`],
-      watch: [`${source}/template/**/*`],
+      watch: [`${source}/template/**/*.html`],
     },
   },
   scss: {

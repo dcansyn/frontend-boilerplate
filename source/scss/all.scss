@@ -1,3 +1,4 @@
-@use "settings/_all" as settings;
+@use "abstracts/_all" as abstracts;
 @use "base/_all" as base;
-@use "objects/_all" as object;
+@use "layout/_all" as layout;
+@use "components/_all" as components;

@@ -1,0 +1,48 @@
+// Fonts
+$font-emoji: "Segoe UI Emoji";
+$font-arial: arial, sans-serif !default;
+
+$font-size-base: 14px;
+$line-height-base: 1.5;
+$font-family-base: $font-arial;
+
+// Heading
+$h1-font-size: 47px;
+$h2-font-size: 37px;
+$h3-font-size: 29px;
+$h4-font-size: 23px;
+$h5-font-size: 18px;
+$h6-font-size: 16px;
+
+// Screen
+$screen: (
+  xxs: 320px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  mm: 1025px,
+  lg: 1200px,
+  xl: 1400px,
+  xxl: 1600px,
+  wide: 1921px,
+);
+
+// Colors
+$black: #000;
+$white: #fff;
+$primary-dark: #1565c0;
+$primary-light: #2699fb;
+$action-dark: #008a00;
+$action-light: #02a257;
+$info-light: #ffc048;
+$info-dark: #ffc048;
+$danger-light: #c23934;
+$danger-dark: #e01e5a;
+
+// Eases
+$ease: cubic-bezier(0.56, 0, 0.265, 1);
+$ease-second: cubic-bezier(0.77, 0.2, 0.05, 1);
+
+// Shadows
+$box-shadow-light: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.06);
+$box-shadow-medium: 0 8px 11px rgba(0, 0, 0, 0.1), 0 9px 12px rgba(0, 0, 0, 0.2);

@@ -1,0 +1,19 @@
+@function color-darker($color, $rate: 10%) {
+  @return darken($color, $rate);
+}
+
+@function color-lighter($color, $rate: 10%) {
+  @return lighten($color, $rate);
+}
+
+@function color-opacity($color, $alpha: 0.5) {
+  @return rgba($color, $alpha);
+}
+
+@function em($pixels, $context: 16) {
+  @return #{calc($pixels / $context)}em;
+}
+
+@function rem($pixels, $context: 16) {
+  @return #{calc($pixels / $context)}rem;
+}
