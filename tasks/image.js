@@ -8,7 +8,7 @@ export const image = () => {
   let files = globbySync(config.image.source.paths);
   if (files.length === 0) return gulp.src(".");
 
-  let result = gulp.src(config.image.source.paths, { encoding: false });
+  let result = gulp.src(config.image.source.paths, { encoding: false, allowEmpty: true });
 
   if (config.build) {
     result = result
@@ -17,13 +17,22 @@ export const image = () => {
           gifsicle({ interlaced: true }),
           mozjpeg({ quality: 75, progressive: true }),
           optipng({ optimizationLevel: 5 }),
-          svgo({ plugins: [{ removeViewBox: true }, { cleanupIDs: true }] }),
+          svgo({
+            plugins: [
+              {
+                name: "removeViewBox",
+                active: true,
+              },
+              {
+                name: "cleanupIDs",
+                active: false,
+              },
+            ],
+          }),
         ])
       )
       .pipe(webp());
   }
 
-  result = result.pipe(gulp.dest(config.image.destination.path));
-
-  return result;
+  return result.pipe(gulp.dest(config.image.destination.path));
 };
