@@ -4,7 +4,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Development",
+      "name": "Debug",
       "runtimeExecutable": "yarn",
       "runtimeArgs": ["release"],
       "cwd": "${workspaceFolder}",
