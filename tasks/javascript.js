@@ -8,7 +8,7 @@ const js = () => {
   let files = globbySync(config.js.source.paths);
   if (files.length === 0) return gulp.src(".");
 
-  let result = gulp.src(config.js.source.paths);
+  let result = gulp.src(files);
 
   if (config.build) {
     result = result.pipe(terser());
@@ -21,7 +21,7 @@ const jsLibrary = () => {
   let files = globbySync(config.libJs.source.paths);
   if (files.length === 0) return gulp.src(".");
 
-  return gulp.src(config.libJs.source.paths).pipe(terser()).pipe(concat(config.libJs.destination.name)).pipe(gulp.dest(config.libJs.destination.path));
+  return gulp.src(files).pipe(terser()).pipe(concat(config.libJs.destination.name)).pipe(gulp.dest(config.libJs.destination.path));
 };
 
 export const javascript = gulp.parallel(js, jsLibrary);

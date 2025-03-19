@@ -11,6 +11,10 @@ export const getCache = (key) => {
 };
 
 export const setCache = (key, data) => {
+  if (!fs.existsSync(config.cache.path)) {
+    fs.mkdirSync(config.cache.path);
+  }
+
   let cachePath = path.join(config.cache.path, `${key}.json`);
   fs.writeFileSync(cachePath, JSON.stringify(data));
 };

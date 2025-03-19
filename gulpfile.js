@@ -24,6 +24,9 @@ const watch = () => {
   gulp.watch(config.libJs.source.paths, { delay: 500 }, gulp.series(javascript, reload));
   gulp.watch(config.scss.source.paths, { delay: 500 }, gulp.series(css, reload));
   gulp.watch(config.libCss.source.paths, { delay: 500 }, gulp.series(css, reload));
+  gulp.watch(config.image.source.paths, { delay: 500 }, gulp.series(image, reload));
+  gulp.watch(config.font.source.paths, { delay: 500 }, gulp.series(font, reload));
+  gulp.watch(config.video.source.paths, { delay: 500 }, gulp.series(video, reload));
   gulp.watch(config.template.source.watch, { delay: 500 }, gulp.series(template, reload));
 };
 

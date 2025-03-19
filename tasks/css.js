@@ -16,7 +16,7 @@ const scss = () => {
   let files = globbySync(config.scss.source.paths);
   if (files.length === 0) return gulp.src(".");
 
-  let result = gulp.src(config.scss.source.paths).pipe(encode({ from: "windows1250", to: "utf8" }));
+  let result = gulp.src(files).pipe(encode({ from: "windows1250", to: "utf8" }));
 
   if (config.build) {
     result = result
@@ -51,7 +51,7 @@ const cssLibrary = () => {
   let files = globbySync(config.libCss.source.paths);
   if (files.length === 0) return gulp.src(".");
 
-  let result = gulp.src(config.libCss.source.paths).pipe(encode({ from: "windows1250", to: "utf8" }));
+  let result = gulp.src(files).pipe(encode({ from: "windows1250", to: "utf8" }));
   if (config.build) {
     result = result
       .pipe(

@@ -9,7 +9,7 @@ export const template = () => {
   if (files.length === 0) return gulp.src(".");
 
   return gulp
-    .src(config.template.source.paths)
+    .src(files)
     .pipe(fileinclude({ prefix: "@@", basepath: "@file", indent: true }))
     .pipe(formatHTML())
     .pipe(gulp.dest(config.template.destination.path));
