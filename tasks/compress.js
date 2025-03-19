@@ -9,7 +9,7 @@ const compressFile = (sourcePath, destinationPath) => {
   if (files.length === 0) return gulp.src(".");
 
   return gulp
-    .src(files, { encoding: false, allowEmpty: true })
+    .src(sourcePath, { encoding: false, allowEmpty: true })
     .pipe(gzip())
     .pipe(gulp.dest(destinationPath))
     .pipe(brotli.compress({ quality: 11 }))

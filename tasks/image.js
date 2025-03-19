@@ -22,7 +22,7 @@ export const image = () => {
   let rasterFilter = filter(["**/*.{png,jpg,jpeg,gif}"], { restore: true });
 
   return gulp
-    .src(files, { encoding: false, allowEmpty: true })
+    .src(files, { encoding: false, allowEmpty: true, base: `${config.source}/images` })
     .pipe(
       imagemin([
         gifsicle({ interlaced: true }),

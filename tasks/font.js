@@ -16,5 +16,5 @@ export const font = () => {
   }
   setCache("fonts", files);
 
-  return gulp.src(files, { encoding: false, allowEmpty: true }).pipe(gulp.dest(config.font.destination.path));
+  return gulp.src(files, { encoding: false, allowEmpty: true, base: `${config.source}/fonts` }).pipe(gulp.dest(config.font.destination.path));
 };

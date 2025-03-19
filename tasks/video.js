@@ -16,5 +16,5 @@ export const video = () => {
   }
   setCache("videos", files);
 
-  return gulp.src(files, { encoding: false, allowEmpty: true }).pipe(gulp.dest(config.video.destination.path));
+  return gulp.src(files, { encoding: false, allowEmpty: true, base: `${config.source}/videos` }).pipe(gulp.dest(config.video.destination.path));
 };
