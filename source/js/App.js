@@ -12,11 +12,15 @@
   p.isMobile = false;
 
   p.screen = {
-    laptop: 1365,
-    tablet: 991,
-    ipad: 767,
-    phone: 575,
-    ip5: 320,
+    xxs: 320,
+    xs: 576,
+    sm: 768,
+    md: 992,
+    mm: 1025,
+    lg: 1200,
+    xl: 1400,
+    xxl: 1600,
+    wide: 1921,
   };
 
   p.initialize = function () {
